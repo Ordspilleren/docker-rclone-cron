@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --update --no-cache ca-certificates openssh-client
+RUN apk add --update --no-cache ca-certificates openssh-client tzdata
 
 ENV RCLONE_VERSION=current
 ENV ARCH=amd64
