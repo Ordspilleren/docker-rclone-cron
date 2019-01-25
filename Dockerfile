@@ -2,7 +2,7 @@ FROM alpine:latest
 
 RUN apk add --update --no-cache ca-certificates openssh-client tzdata
 
-ENV RRESTIC_VERSION=0.9.4
+ENV RESTIC_VERSION=0.9.4
 ENV ARCH=amd64
 ADD https://github.com/restic/restic/releases/download/v${RESTIC_VERSION}/restic_${RESTIC_VERSION}_linux_${ARCH}.bz2 /
 RUN bzip2 -d restic_${RESTIC_VERSION}_linux_${ARCH}.bz2 && mv restic_${RESTIC_VERSION}_linux_${ARCH} /bin/restic && chmod +x /bin/restic
