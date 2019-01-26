@@ -7,7 +7,7 @@ ENV ARCH=amd64
 ADD https://github.com/restic/restic/releases/download/v${RESTIC_VERSION}/restic_${RESTIC_VERSION}_linux_${ARCH}.bz2 /
 RUN bzip2 -d restic_${RESTIC_VERSION}_linux_${ARCH}.bz2 && mv restic_${RESTIC_VERSION}_linux_${ARCH} /bin/restic && chmod +x /bin/restic
 
-RUN mkdir -p /var/spool/cron/crontabs
+RUN rm /var/spool/cron/crontabs/root
 
 RUN adduser -S restic
 
