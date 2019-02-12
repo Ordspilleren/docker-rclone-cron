@@ -18,9 +18,9 @@ restic backup \
 restic forget \
 	--verbose \
 	--tag $BACKUP_TAG \
-    --option b2.connections=$B2_CONNECTIONS \
+    	--option b2.connections=$B2_CONNECTIONS \
 	--group-by "paths,tags" \
-	--keep-last $KEEP_LAST
-    --prune
+	--keep-last $KEEP_LAST \
+    	--prune
 
 echo "Backup & cleaning is done."
