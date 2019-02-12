@@ -11,13 +11,16 @@ RUN rm /var/spool/cron/crontabs/root
 
 RUN adduser -S restic
 
-ENV RESTIC_CMD=""
+ENV BACKUP_PATHS=""
+ENV BACKUP_EXCLUDES=""
 ENV RESTIC_PASSWORD=""
 ENV RESTIC_REPOSITORY=""
 ENV BACKUP_CRON="0 03 * * 1"
+ENV KEEP_LAST="15"
 
 VOLUME /data
 
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /
+COPY backup.sh /
 
 ENTRYPOINT ["/entrypoint.sh"]
