@@ -17,9 +17,10 @@ restic forget \
 	--cache-dir $CACHE_DIR \
 	--verbose \
 	--tag $BACKUP_TAG \
-    --option b2.connections=$B2_CONNECTIONS \
+    	--option b2.connections=$B2_CONNECTIONS \
 	--group-by "paths,tags" \
 	--keep-last $KEEP_LAST \
-    --prune
+    	--prune
+	--cleanup-cache
 
 echo "Backup & cleaning is done."
